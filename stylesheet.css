@@ -20,7 +20,21 @@ main {
   padding:24px 16px
 }
 header {
+  display:flex;
+  align-items:center;
+  gap:28px;
   padding:16px
+}
+.bio {
+  flex:1;
+  min-width:0
+}
+.portrait {
+  display:block;
+  width:26%;
+  max-width:200px;
+  height:auto;
+  border-radius:50%
 }
 h1 {
   font-size:32px;
@@ -74,7 +88,13 @@ footer {
   padding:12px 8px
 }
 header {
+  flex-direction:column;
+  gap:16px;
   padding:12px
+}
+.portrait {
+  order:-1;
+  width:144px
 }
 nav {
   line-height:2
@@ -85,9 +105,6 @@ nav {
 }
 .publications tr {
   margin-bottom:28px
-}
-.figure:empty {
-  display:none
 }
 .figure {
   padding:8px 12px;
