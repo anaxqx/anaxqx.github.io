@@ -118,3 +118,8 @@ h2 {
 }
 
 }
+
+/* A small doorway to a personal exploration. */
+.random-link-wrap { margin:18px 16px 0; text-align:center }
+.random-link { color:#737373; font-size:12px; display:inline-block; padding:8px 10px; text-decoration:none }
+.random-link:hover,.random-link:focus-visible { color:#1772d0; text-decoration:underline }
