@@ -119,7 +119,90 @@ h2 {
 
 }
 
-/* A small doorway to a personal exploration. */
-.random-link-wrap { margin:18px 16px 0; text-align:center }
-.random-link { color:#737373; font-size:12px; display:inline-block; padding:8px 10px; text-decoration:none }
-.random-link:hover,.random-link:focus-visible { color:#1772d0; text-decoration:underline }
+.personal-projects {
+  margin:12px 0 0
+}
+.personal-projects summary {
+  display:block;
+  width:max-content;
+  margin:0 auto;
+  padding:12px 9px;
+  color:#666;
+  font-size:14px;
+  line-height:20px;
+  text-decoration:underline;
+  text-decoration-color:#aaa;
+  text-underline-offset:3px;
+  cursor:pointer
+}
+.personal-projects summary::-webkit-details-marker {
+  display:none
+}
+.personal-projects summary:hover,.personal-projects summary:focus-visible {
+  color:#1772d0;
+  text-decoration-color:currentColor
+}
+.personal-projects summary:focus-visible {
+  outline:2px solid #1772d0;
+  outline-offset:2px
+}
+.personal-projects-content {
+  padding:8px 16px 0
+}
+.personal-projects-content::after {
+  content:"";
+  display:block;
+  width:min(100%, clamp(320px,66%,520px));
+  aspect-ratio:2 / 1;
+  margin:0 0 0 auto;
+  background:url("images/personal-projects-margin.webp") right bottom / 100% auto no-repeat;
+  mask-image:linear-gradient(to bottom,transparent,#000 21%)
+}
+.personal-projects-content h2,.personal-projects-content dl {
+  margin:0 0 12px
+}
+.personal-projects-content dt {
+  font-weight:700
+}
+.personal-projects-content dd {
+  margin:2px 0 12px;
+  color:#555
+}
+.personal-projects-content dd p {
+  margin:0
+}
+.atlas-demo {
+  margin:12px 0 24px
+}
+.atlas-demo video {
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16 / 9;
+  border-radius:3px;
+  background:#f4f3ee
+}
+.atlas-demo figcaption {
+  margin-top:6px;
+  font-size:14px
+}
+@media (prefers-reduced-motion:no-preference) {
+  @supports (interpolate-size:allow-keywords) and selector(details::details-content) {
+    .personal-projects {
+      interpolate-size:allow-keywords
+    }
+    .personal-projects::details-content {
+      block-size:0;
+      overflow:clip;
+      transition:block-size 300ms ease,content-visibility 300ms allow-discrete
+    }
+    .personal-projects[open]::details-content {
+      block-size:auto
+    }
+  }
+}
+@media (max-width:600px) {
+  .personal-projects-content {
+    padding-inline:12px
+  }
+}
